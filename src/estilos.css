@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Pixelify+Sans:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Creepster';
+}
+
+header {
+    background-image: url("../src/images/jack.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0 100px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255,255,255,.1) ;
+    backdrop-filter: blur(20px);
+    border-bottom: 2px solid rgba(255,255,255,.2);  
+
+}
+
+nav .logo a {
+    font-size: 45px;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+
+}
+
+nav .logo a:hover {
+    color: #e8e4cd;
+    transition: .5s;
+}
+
+nav ul {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+}
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 500;
+}
+nav ul li a:hover {
+    color: #e8e4cd;
+    transition: .5s;
+
+}
+.menu-icon {
+   display: none;
+   width: 25px;
+   height: 3px;
+   background: #fff;
+   transform: translateY(-50%);
+   transition: .5s;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    transition: .5s;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.menu-icon::before {
+    top: -8px;
+}
+
+.menu-icon::after {
+    top: 8px;
+}
+
+.menu-icon.active {
+    background: rgba(0,0,0,0);
+}
+
+.menu-icon.active::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.menu-icon.active::after {
+    top: 0;
+    transform: rotate(135deg);
+}
+
+.info{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.info h2 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #f3f3f3;
+}
+
+.info h1{
+    font-size: 10rem;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    color: #c56d1b;
+}
+
+.info button {
+    padding: 0.5em 1.7em;
+    margin-top: 10px;
+    border: 2px soliod #011f29;
+    position: relative;
+    overflow: hidden;
+    background: rgba(255,255,255,.1);
+    backdrop-filter: blur(20px);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    transition: .3s;
+    color: #011f29;
+    z-index: 1;
+    cursor: pointer;
+
+} 
+
+.info button::before {
+    content: "";
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #011f29;
+    transition: 0.5s ease;
+    display: block;
+    z-index: -1;
+
+}
+
+.info button:hover::before {
+    width: 105%;
+}
+
+.info button:hover{
+    border: 2px solid #011f29;
+    color: #fff;
+}
+
+@media screen and (max-width:992px) {
+    nav ul {
+        position: fixed;
+        top: 80px;
+        left: 100%;
+        width: 100%;
+        height: 500px;
+        background: #011f29;
+        flex-direction: column;
+        gap: 1.5rem;
+        transition: .5s ease-in;
+        border-bottom: 2px solid rgba(255,255,255,.2);
+    }
+
+    nav ul li a{
+        font-size: 28px;
+    }
+
+    ul.active {
+        left: 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+    
+    .info h2 {
+        font-size: 3.2rem;
+        letter-spacing: 1.5px;
+    }
+
+    .info h1 {
+        font-size: 7rem;
+        letter-spacing: 6px;
+    }
+}
+@media screen and (max-width:767px) {
+    nav{
+        padding: 0 35px;
+    }
+}
+@media screen and (max-width:567px) {
+    nav ul li{
+        font-size: 24px;
+    }
+    .info h2 {
+        font-size: 2.8rem;
+        letter-spacing: 1px;
+    }
+    .info h1 {
+        font-size: 5rem;
+        letter-spacing: 5px;
+    }
+}
